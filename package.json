@@ -1,0 +1,27 @@
+{
+  "name": "service_tickets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "author": "Eric Zamora",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "firebase": "^10.5.0",
+    "firebase-admin": "^11.11.0",
+    "firebaseui": "^6.1.0",
+    "handlebars": "^4.7.8",
+    "method-override": "^3.0.0",
+    "nodemon": "^3.0.1"
+  }
+}
