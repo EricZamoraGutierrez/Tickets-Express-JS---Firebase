@@ -104,7 +104,7 @@
 
   <select id="target" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
     <option value="" hidden>¿Cómo podemos ayudarte?</option>
-    <option value="content_1">Opción 1</option>
+    <option value="content_1">Problemas al usar la aplicación</option>
     <option value="content_2">Opción 2</option>
     <option value="content_3">Opción 3</option>
     <option value="content_4">Otro</option>
@@ -116,35 +116,124 @@
         <div class="card">
 
 
-          <div class="card-header bg-dark text-center">
+          <div class="card-header bg-dark text-center ">
             <h3 class="text-white">Problemas con el uso de la app</h3>
           </div>
-          <div class="row g-0">
-            <div class="col-md-8">
 
-              <div class="card-body text-right">
-                <p class="lead my-5">
-                  Para el uso correcto de las funciones de nuestra aplicación te recomendamos que
-                  revises nuestro canal de Youtube en el cuál encontrarás tutoriales de uso de la aplicación.
-                </p>
-                <button class="btn btn-danger">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-youtube" viewBox="0 0 16 16">
-                    <path
-                      d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
-                  </svg>
-                  <a class="bi bi-youtube" href="https://www.youtube.com/@alphapyme2491/videos">
-                    Visita nuestro canal!
-                  </a>
-                </button>
 
-                
+          <div id="carouselExample" class="carousel slide" data-bs-theme="dark">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              {{!-- Tarjeta 1 --}}
+              <div class="carousel-item active">
+                <div class="row g-0 mx-auto" style="min-height: 300px; max-width: 75%;">
+                  <div class="col-md-8 my-3">
+                    <h3 class="card-title text-right mt-3"> Revisa nuestro canal de Youtube</h3>
+                    <div class="card-body text-right">
+                      <p class="lead my-3">
+                        Para el uso correcto de las funciones de nuestra aplicación te recomendamos que
+                        revises nuestro canal de Youtube en el cuál encontrarás tutoriales de uso de la aplicación.
+                      </p>
+                      <button class="btn btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-youtube" viewBox="0 0 16 16">
+                          <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                        </svg>
+                        <a class="bi bi-youtube" href="https://www.youtube.com/@alphapyme2491/videos">
+                          Visita nuestro canal!
+                        </a>
+                      </button>
+
+
+                    </div>
+                  </div>
+                  <div class="col-md-4 my-5">
+                    <img src="/images/canalIMG.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                </div>
+              </div>
+              {{!-- Tarjeta 2 --}}
+              <div class="carousel-item">
+                <div class="row g-0 mx-auto" style="min-height: 300px; max-width: 75%;">
+                  <div class="col-md-8 my-3">
+                    <h3 class="card-title text-right mt-3"> Revisa nuestra documentación</h3>
+                    <div class="card-body text-right">
+                      <p class="lead my-3">
+                        Contamos con una documentación en la cuál podrás encontrar información sobre el uso de la
+                        aplicación. Puedes acceder a ella por medio del siguiente botón, guíate de las carpetas 
+                        para identificar la situación que deseas resolver.
+                      </p>
+                      <button class="btn btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-youtube" viewBox="0 0 16 16">
+                          <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                        </svg>
+                        <a class="bi bi-youtube" href="https://www.youtube.com/@alphapyme2491/videos">
+                          Visita nuestro canal!
+                        </a>
+                      </button>
+
+
+                    </div>
+                  </div>
+                  <div class="col-md-4 my-5">
+                    <img src="/images/canalIMG.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row g-0 mx-auto" style="min-height: 300px; max-width: 75%;">
+                  <div class="col-md-8 my-3">
+                    <h3 class="card-title text-right mt-3"> Revisa nuestro canal de Youtube</h3>
+                    <div class="card-body text-right">
+                      <p class="lead my-3">
+                        Para el uso correcto de las funciones de nuestra aplicación te recomendamos que
+                        revises nuestro canal de Youtube en el cuál encontrarás tutoriales de uso de la aplicación.
+                      </p>
+                      <button class="btn btn-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-youtube" viewBox="0 0 16 16">
+                          <path
+                            d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                        </svg>
+                        <a class="bi bi-youtube" href="https://www.youtube.com/@alphapyme2491/videos">
+                          Visita nuestro canal!
+                        </a>
+                      </button>
+
+
+                    </div>
+                  </div>
+                  <div class="col-md-4 my-5">
+                    <img src="/images/canalIMG.png" class="img-fluid rounded-start" alt="...">
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <img src="/images/canalIMG.png" class="img-fluid rounded-start" alt="...">
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+              data-bs-theme="dark">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next"
+              data-bs-theme="dark">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
+
+
+
+
         </div>
 
       </div>
