@@ -1,9 +1,6 @@
 const indexCtrl = {};
 const firebase = require('../firebase');
-const auth = require('./auth.controller')
-var express = require('express')
-var app = require('../server')
-const session = require("express-session");
+
 
 indexCtrl.renderIndex = (req, res) => {
     res.render('index.hbs');
