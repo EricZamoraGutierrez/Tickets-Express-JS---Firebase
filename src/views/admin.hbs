@@ -1,8 +1,7 @@
 <div>
-    <h1 class="title-text">
+    <h1 class="title-text my-3">
         Tickets registrados
 
-        Hola Administrador con el e-mail
     </h1>
 
     <div class="row">
@@ -11,10 +10,11 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title d-flex justify-content-between align-items-center">
-                        {{ doc.name }} <a href="/Agencias/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                    Nombre: {{ doc.nombre }} <a href="/Agencias/edit/{{_id}}"><i class="fas fa-edit"></i></a>
                     </h4>
-                    <p>Descripción General: {{ doc.description }} </p>
-                    <p>Fecha de creación: {{ doc.date }} </p>
+                    <p><b>Descripción General:</b> 
+                    <br>{{ doc.desc}} </p>
+                    <p><b>Empresa:</b> {{ doc.empresa}} </p>
                     <!-- DELETE REQUEST -->
                     <form action="/Agencias/delete/{{_id}}?_method=DELETE" method="POST">
                         <input type="hidden" name="_method" value="DELETE">

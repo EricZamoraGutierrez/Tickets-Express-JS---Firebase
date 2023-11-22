@@ -15,8 +15,9 @@ ticketsCtrl.renderTicketForm = (req, res) => {
 ticketsCtrl.createNewTicket = async (req, res) => {
 
   const folioGenerado = Math.floor(Math.random() * 1000000000);
-  const { nombre, empresa, email, tel, desc} = req.body;
-  const newticket = ({ nombre, empresa, email, tel, desc, folioGenerado });
+  const estado = "Abierto";
+  const { nombre, empresa, email, tel, asunto, desc } = req.body;
+  const newticket = ({ nombre, empresa, email, tel,asunto, desc, folioGenerado, estado});
   const responseMail = ({
     to: email,
     message: {
@@ -32,8 +33,10 @@ ticketsCtrl.createNewTicket = async (req, res) => {
       <p>Empresa: ${empresa}</p>
       <p>Email: ${email}</p>
       <p>Teléfono: ${tel}</p>
+      <p>Asunto: ${asunto}</p>
       <p>Descripción: ${desc}</p>
       <p>Fecha: ${new Date().toLocaleString()}</p>
+      <p>Estado: ${estado}</p>
       <p>Si desea dar seguimiento a su ticket, por favor ingrese a la siguiente liga:</p>
       <a href="http://localhost:3000/">Soporte de Tickets AlphaPYME</a>
       `
@@ -44,20 +47,26 @@ ticketsCtrl.createNewTicket = async (req, res) => {
   await firebase.setDoc(firebase.doc(db, "tickets", email), newticket);
   console.log(newticket);
 
-  await firebase.setDoc(firebase.doc(db, "email", "T." + folioGenerado), responseMail);
+  await firebase.setDoc(firebase.doc(db, "email", "t-" + folioGenerado), responseMail);
   console.log(responseMail);
   res.redirect("/");
 };
 
-// ticketsCtrl.renderticket = async (req, res) => {
-//     const tickets = await ticketModel.find();
-//     res.render("ticket", { tickets });
-// };
+ticketsCtrl.findByID = async (req, res) => {
+  const db = firebase.firestoreDb;
+  const q = firebase.query(firebase.collection(db, "tickets"), firebase.where("folioGenerado", "==", parseInt(req.query.id)));
+  const querySnapshot = await firebase.getDocs(q);
+  try {
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+      res.render( 'ticket.hbs', { doc: doc.data() });
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+};
 
-// ticketsCtrl.renderEditForm = async (req, res) => {
-//     const ticket = await ticketModel.findById(req.params.id); 
-//     res.render("tickets/edit-ticket", { ticket }); 
-// };
 
 // ticketsCtrl.updateticket = async (req, res) => {
 //   const {  nombre, rfc, direccion } = req.body;

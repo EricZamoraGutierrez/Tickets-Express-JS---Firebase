@@ -13,7 +13,7 @@ const router = Router();
 router.get("/Tickets/add", renderTicketForm);
 router.post("/Tickets/new-Ticket", createNewTicket);
 //Get all 
-router.get("/Tickets", renderTicket);
+// router.get("/Tickets/:id", renderTicket);
 // Edit 
 router.get("/Tickets/edit/:id", renderEditForm);
 router.put("/Tickets/edit-Ticket/:id",updateTicket);
