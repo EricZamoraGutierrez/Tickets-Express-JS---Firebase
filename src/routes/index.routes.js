@@ -7,7 +7,9 @@ const session = require("express-session");
 const {
   createNewTicket,
   renderTicket,
-  findByID
+  findByID,
+  AdminfindByID,
+  AdminResponse
 } = require("../controllers/ticket.controller");
 const {createNewUser, loginUser} = require('../controllers/auth.controller');
 
@@ -26,10 +28,15 @@ router.get("/signup", renderSignup);
 router.post("/Tickets/new-Ticket", createNewTicket);
 //Find  by id
 router.get("/Tickets/:id", findByID);
-// //Render ticket
-// router.get("/Tickets/Ticket", renderTicket);
+
 //new User
 router.post("/auth/signup", createNewUser);
 router.post("/auth/signin", loginUser);
+
+//Admin open ticket
+router.get("/Tickets/open/:Id", AdminfindByID );
+
+//Admin Reponse ticket
+router.post("/admin/response/:email", AdminResponse );
 
 module.exports = router;

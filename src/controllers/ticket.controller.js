@@ -15,9 +15,9 @@ ticketsCtrl.renderTicketForm = (req, res) => {
 ticketsCtrl.createNewTicket = async (req, res) => {
 
   const folioGenerado = Math.floor(Math.random() * 1000000000);
-  const estado = "Abierto";
+  const estado = "Pendiente";
   const { nombre, empresa, email, tel, asunto, desc } = req.body;
-  const newticket = ({ nombre, empresa, email, tel,asunto, desc, folioGenerado, estado});
+  const newticket = ({ nombre, empresa, email, tel,asunto, desc, folioGenerado, estado, fecha: new Date().toLocaleString(), respuesta: "Sin respuesta por ahora."});
   const responseMail = ({
     to: email,
     message: {
@@ -56,6 +56,11 @@ ticketsCtrl.findByID = async (req, res) => {
   const db = firebase.firestoreDb;
   const q = firebase.query(firebase.collection(db, "tickets"), firebase.where("folioGenerado", "==", parseInt(req.query.id)));
   const querySnapshot = await firebase.getDocs(q);
+  if (querySnapshot.empty) {
+    console.log("No matching documents.");
+    
+    res.redirect("/");
+  }else{
   try {
     querySnapshot.forEach((doc) => {
       console.log(doc.id, " => ", doc.data());
@@ -65,8 +70,34 @@ ticketsCtrl.findByID = async (req, res) => {
     console.log(error);
     res.redirect("/");
   }
+}
 };
 
+ticketsCtrl.AdminfindByID = async (req, res) => {
+  const db = firebase.firestoreDb;
+  const q = firebase.query(firebase.collection(db, "tickets"), firebase.where("folioGenerado", "==", parseInt(req.params.Id)));
+  const querySnapshot = await firebase.getDocs(q);
+  if (querySnapshot.empty) {
+    console.log("No matching documents.");
+    
+    res.redirect("/admin");
+  }else{
+  try {
+    querySnapshot.forEach((doc) => {
+      res.render( 'adminTicketView.hbs', { doc: doc.data() });
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+}
+};
+
+ticketsCtrl.AdminResponse = async (req, res) => {
+  const db = firebase.firestoreDb;
+  await firebase.updateDoc(firebase.doc(db, "tickets", req.params.email), {respuesta: req.body.desc, estado: "Respuesta enviada"});
+  res.redirect("/admin");
+}
 
 // ticketsCtrl.updateticket = async (req, res) => {
 //   const {  nombre, rfc, direccion } = req.body;

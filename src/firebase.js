@@ -1,7 +1,7 @@
 const { app } = require("firebase/app");
 const { initializeApp } = require("firebase/app");
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} = require("firebase/auth");
-const { getFirestore, doc, setDoc, collection, getDoc, getDocs, where, query} = require("firebase/firestore");
+const { getFirestore, doc, setDoc, collection, getDoc, getDocs, where, query, updateDoc	} = require("firebase/firestore");
 
 
 const firebaseConfig = {
@@ -20,4 +20,4 @@ let auth = getAuth(app);
 
 module.exports = { getAuth, getFirestore, doc, setDoc,
                  firestoreDb, auth, collection, createUserWithEmailAndPassword, getDoc, getDocs, 
-                 signInWithEmailAndPassword, query, where};
+                 signInWithEmailAndPassword, query, where, updateDoc};

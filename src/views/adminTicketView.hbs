@@ -1,0 +1,41 @@
+<script>
+    
+</script>
+
+<div class="row">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center my-2">
+                    {{ doc.asunto }}    <i class="fas fa-edit"></i></a>
+                </h4>
+                <p class="mt-3"><b>Descripción General:</b>
+                    <br>{{ doc.desc}}
+                </p>
+
+                <p><b>Empresa:</b> {{ doc.empresa}} </p>
+                <p><b>Nombre:</b> {{ doc.nombre }}</p>
+                <p><b>Estado del ticket:</b> {{doc.estado}} </p>
+                <p><b>Teléfono:</b> {{doc.tel}} </p>
+                <p><b>E-mail:</b> {{doc.email}} </p>
+                <div>
+                    <form action="/admin/response/{{doc.email}}" method="POST">
+                        <input style="height: 140px" type="text" name="desc" class="form-control overflow-visible"
+                            placeholder="Escribe la respuesta en este recuadro" autofocus />
+                        <button type="submit" class="btn btn-success btn-block btn-sm px-4 my-3">Enviar</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    {{!-- <div class="card mx-auto">
+        <div class="card-body">
+            <p class="lead">No hay tickets por atender</p>
+        </div>
+    </div> --}}
+
+</div>

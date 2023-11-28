@@ -10,15 +10,15 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title d-flex justify-content-between align-items-center">
-                    Nombre: {{ doc.nombre }} <a href="/Agencias/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                     {{ doc.asunto }} <i class="fas fa-edit"></i></a>
                     </h4>
                     <p><b>Descripción General:</b> 
                     <br>{{ doc.desc}} </p>
                     <p><b>Empresa:</b> {{ doc.empresa}} </p>
-                    <!-- DELETE REQUEST -->
-                    <form action="/Agencias/delete/{{_id}}?_method=DELETE" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger btn-block btn-sm">Delete</button>
+                    {{!-- Open ticket --}}
+                    <form action="/Tickets/open/{{doc.folioGenerado}}" method="GET">
+                        <input type="hidden" name="_method" value="GET">
+                        <button type="submit" class="btn btn-success btn-block btn-sm">Responder</button>
                     </form>
                 </div>
             </div>

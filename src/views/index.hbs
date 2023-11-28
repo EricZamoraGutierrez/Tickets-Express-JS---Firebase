@@ -1,3 +1,4 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <style>
   .inv {
     display: none;
@@ -24,12 +25,12 @@
   }
 
   .overflow-visible {
-  white-space: initial;
-}
+    white-space: initial;
+  }
 </style>
 
 <div class="container">
-  
+
   {{!-- Servicio a escoger --}}
   <div class="my-3">
     <div class="form-check">
@@ -292,8 +293,21 @@
 
       </div>
 
-      <div id="content_3" class="inv">Contenido 3</div>
-
+      <div id="content_3" class="inv">
+        <div class="card">
+          <h3 class="card-header bg-dark text-center mt-3 text-white"> Reporta un error </h3>
+          <div class="card-body text-right">
+            <p class="lead my-3">
+              Si encontraste un error en la aplicación o tienes problemas con alguna de las funciones
+              te pedimos por favor que generes capturas de pantalla con el módulo que ha generado el error
+              además de llenar este formulario de la manera más precisa posible.
+            </p>
+            <h4 class="my-5">
+              ESTA SECCIÓN ESTÁ EN CONSTRUCCIÓN POR EL MOMENTO RECURRE A LA SECCIÓN "OTROS"
+            </h4>
+          </div>
+        </div>
+      </div>
       <div id="content_4" class="inv">
         <div class="card">
           <div class="card-header bg-dark text-center">
@@ -325,9 +339,11 @@
               </div>
               <div class="mb-3">
                 <label for="desc">Descripción:</label>
-                <input style="height: 140px" type="text" name="desc" class="form-control overflow-visible" placeholder="Describe tu problema aquí" autofocus />
+                <input style="height: 140px" type="text" name="desc" class="form-control overflow-visible"
+                  placeholder="Describe tu problema aquí" autofocus />
                 <p class="text-secondary">
-                  Intenta describir con precisión la situación para que nuestros tecnicos puedan brindarte un apoyo focalizado.
+                  Intenta describir con precisión la situación para que nuestros tecnicos puedan brindarte un apoyo
+                  focalizado.
                 </p>
               </div>
 
@@ -354,6 +370,13 @@
           }
         });
       </script>
+      {{!-- alert --}}
+      {{!--
+      <script>
+        $("document").ready(function () {
+          alert("Hello, world");
+        }); 
+      </script> --}}
 
 
 </div>

@@ -27,7 +27,6 @@ indexCtrl.renderAdmin = async (req, res) => {
             res.render('admin.hbs', { docs });
 
         });
-    console.log(req.session);
 }
 
 
